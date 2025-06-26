@@ -20,7 +20,7 @@ export default function SearchBox() {
     // debouncedSearchが更新されたら実行
     useEffect(() => {
         if (debouncedSearch.trim()) {
-            router.push(`/?search=${(debouncedSearch.trim)}`)
+            router.push(`/?search=${(debouncedSearch.trim())}`)
         } else {
             router.push('/')
         }
