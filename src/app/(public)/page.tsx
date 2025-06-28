@@ -1,4 +1,4 @@
-import { getPost, getPosts, searchPosts } from "@/lib/post"
+import { getPosts, searchPosts } from "@/lib/post"
 import PostCard from "@/components/post/PostCard"
 import { Post } from '@/types/post'
 
