@@ -69,7 +69,7 @@ export default function CreatePage() {
             </Button>
         </div>
         {preview && (
-            <div className="border p-4 bg-gray-50 prose">
+            <div className="border p-4 bg-gray-50 prose max-w-none">
                 <ReactMarkdown
                     remarkPlugins={[remarkGfm]}
                     rehypePlugins={[rehypeHighlight]}
