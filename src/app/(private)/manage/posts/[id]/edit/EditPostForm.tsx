@@ -8,7 +8,7 @@ import "highlight.js/styles/github.css"; // コードハイライト用ののス
 import { Label } from '@/components/ui/label'
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { createPost } from "@/lib/actions/createPost"
+import { updatePost } from "@/lib/actions/updatePost"
 import Image from "next/image"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 
@@ -30,7 +30,7 @@ export default function EditPostForm({post} : EditPostFormProps) {
     const [published, setPublished] = useState(post.published)
     const [imagePreview, setImagePreview] = useState(post.topImage)
 
-    const [state, formAction] = useActionState(createPost, {
+    const [state, formAction] = useActionState(updatePost, {
             success: false, errors: {}
         })
 
@@ -134,7 +134,7 @@ export default function EditPostForm({post} : EditPostFormProps) {
         </div>
         </RadioGroup>
         <Button type="submit" className="bg-blue-500 text-white px-4 py-2 rouded">更新する</Button>
-        <input type="hidden" name="postId" value={post.id} /> // 記事ID
+        <input type="hidden" name="postId" value={post.id} />
         <input type="hidden" name="oldImageUrl" value={post.topImage || ''} />
       </form>
     </div>
