@@ -15,6 +15,7 @@ export async function updatePost(
 ): Promise<ActionState> {
     
     // フォームの情報を取得
+    console.log('updatePost:', formData)
     const title = formData.get('title') as string
     const content = formData.get('content') as string
     const topImageInput = formData.get('topImage')
@@ -33,6 +34,7 @@ export async function updatePost(
     let imageUrl = oldImageUrl
     if (topImage instanceof File && topImage.size > 0 && topImage.name !== 'undefined') {
         const newImageUrl = await saveImage(topImage)
+        console.log('###newImageUrl###', newImageUrl)
         if(!newImageUrl) {
             return { success: false, errors: {image: ['画像の保存に失敗しました']}}
         }

@@ -16,6 +16,7 @@ export async function createPost(
 ): Promise<ActionState> {
     
     // フォームの情報を取得
+    console.log('createPost:', formData)
     const title = formData.get('title') as string
     const content = formData.get('content') as string
     const topImageInput = formData.get('topImage')
