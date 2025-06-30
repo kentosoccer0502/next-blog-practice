@@ -1,4 +1,3 @@
-import { auth } from '@/auth';
 import { prisma } from "@/lib/primsa";
 
 export async function getOwnPosts(userId:string) {

@@ -8,7 +8,6 @@ import {
 import Link from 'next/link'
 import DeletePostDialog from "./deletePostDialog"
 import { useState } from "react"
-import { BlockList } from "net"
 
 export default function PostDropdownMenu({postId}:{postId:string}) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
